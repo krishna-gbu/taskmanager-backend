@@ -25,10 +25,14 @@ mongoose
 app.use("/api/v1/users", userRoute);
 app.use("/api/tasks", taskRoutes);
 
-app.use("/api", (req, res, next) => {
+app.get("/api", (req, res, next) => {
   //   console.log(req.cookies);
   return res.status(200).json({ message: "api working good" });
 });
+
+// app.all("*", (req, res, next) => {
+//   next(new AppError(`can't find ${req.originalUrl} on thier server`));
+// });
 
 app.use(globalErrorController);
 
