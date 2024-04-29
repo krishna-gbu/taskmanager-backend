@@ -30,10 +30,6 @@ app.use("/api", (req, res, next) => {
   return res.status(200).json({ message: "api working good" });
 });
 
-app.all("*", (req, res, next) => {
-  next(new AppError(`can't find ${req.originalUrl} on thier server`));
-});
-
 app.use(globalErrorController);
 
 const Port = process.env.PORT || 5000;
