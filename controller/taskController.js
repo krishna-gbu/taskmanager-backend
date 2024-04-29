@@ -4,7 +4,7 @@ const Task = require("../models/Task");
 exports.getAllTasks = async (req, res, next) => {
   try {
     const tasks = await Task.find();
-    res.json(tasks);
+    res.status(200).json(tasks);
   } catch (err) {
     next(err);
   }

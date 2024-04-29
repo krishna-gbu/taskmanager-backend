@@ -25,7 +25,7 @@ mongoose
 app.use("/api/v1/users", userRoute);
 app.use("/api/tasks", taskRoutes);
 
-app.use("/", (req, res, next) => {
+app.use("/api", (req, res, next) => {
   //   console.log(req.cookies);
   return res.status(200).json({ message: "api working good" });
 });
