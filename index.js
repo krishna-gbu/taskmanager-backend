@@ -23,7 +23,7 @@ mongoose
   .catch((err) => console.error(err));
 
 app.use("/api/v1/users", userRoute);
-app.use("/api/tasks", taskRoutes);
+app.use("/api/v1/tasks", taskRoutes);
 
 app.get("/api", (req, res, next) => {
   //   console.log(req.cookies);
