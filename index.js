@@ -15,10 +15,7 @@ app.use(cors());
 
 mongoose.set("strictQuery", false);
 mongoose
-  .connect(process.env.CLOUD_DATABASE, {
-    // useNewUrlParser: true,
-    // useUnifiedTopotrue
-  })
+  .connect(process.env.CLOUD_DATABASE)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error(err));
 
